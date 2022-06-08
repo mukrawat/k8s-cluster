@@ -26,7 +26,7 @@ variable "aws_region" {
 
 variable "vpc_name" {
   type        = string
-  default     = "muk"
+  default     = "k8s"
   description = "Customer name"
 }
 
