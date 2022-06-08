@@ -108,7 +108,7 @@ data "template_cloudinit_config" "controller" {
   part {
     content_type = "text/x-shellscript"
     #content     = file("${path.module}/files/server-install.sh")
-    content      = file("~/kubernetes_TF_code/parent_module/common-utilities/vpc/files/server-install.sh")
+    content      = file("~/k8s-cluster/vpc/files/server-install.sh")
   }
 }
 
