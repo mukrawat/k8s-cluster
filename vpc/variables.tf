@@ -57,13 +57,7 @@ variable ubuntu_os_version {
   description = "ubuntu version"
 }
 
-variable  key_name {
-  type        = string
-  default     = "k8s_key" 
-  description = "key to connect to controller sitting in aws"
-}
-
-variable "pub_zone_name" {
+variable "cluster_name" {
   type        = string
   description = "Pass the cluster name here. Same would be considered as vpc name."
 }

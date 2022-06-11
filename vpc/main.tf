@@ -64,7 +64,7 @@ resource "aws_route_table_association" "rt-public-subnet-association"{
 ########################################################
 
 resource "aws_route53_zone" "private" {
-  name = "${var.pub_zone_name}"
+  name = "${var.cluster_name}"
 
   vpc {
     vpc_id = aws_vpc.vpc.id
@@ -76,7 +76,7 @@ resource "aws_route53_zone" "private" {
 #########################################################
 
 resource "aws_key_pair" "k8s_key" {
-  key_name        = var.key_name
+  key_name        = "${var.vpc_name}_k8s_key"
   public_key      = file("~/.ssh/id_rsa.pub")
 }
 
@@ -120,7 +120,7 @@ data "aws_ami" "linux" {
   }
 }
 
-resource "aws_iam_policy" "s3_admin_policy" {
+resource "aws_iam_policy" "admin_policy" {
   name        = "${local.resource_name_prefix}-s3-admin-policy"
   path        = "/"
   description = "This policy is to describe s3"
@@ -155,7 +155,7 @@ resource "aws_iam_role" "iam-role" {
 
 resource "aws_iam_role_policy_attachment" "policy-attach" {
   role       = aws_iam_role.iam-role.name
-  policy_arn = aws_iam_policy.s3_admin_policy.arn
+  policy_arn = aws_iam_policy.admin_policy.arn
 }
 
 resource "aws_iam_instance_profile" "iam-profile" {

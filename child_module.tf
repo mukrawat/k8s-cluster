@@ -1,14 +1,13 @@
 module "s3" {
   source = "./s3"
   # Vpc_name is basically your name or surname to keep resources unique in aws.
-  vpc_name = "mukesh"
+  vpc_name = "rahul"
 }
 
 module "vpc" {
-  source = "./vpc"
-  # pub_zone_name is basically your cluster name or the vpc tag name.
-  pub_zone_name = "mukesh.k8s"
-  vpc_name      = "mukesh"
+  source       = "./vpc"
+  cluster_name = "${module.s3.customer_or_your_name}.k8s"
+  vpc_name     = "${module.s3.customer_or_your_name}"
 }
 
 output "s3_bucket_name" {
