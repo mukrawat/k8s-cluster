@@ -38,4 +38,4 @@ NOTE:
 #								Changes made on 11 June										#
 #################################################################################################################################################################
 
-- Now, since this code is changed to achieve modular approach, please make chnages in main.tf file inside '~/k8s-cluster' only. Thanks.
+- Now, since this code is changed to achieve modular approach, please make chnages in child_module.tf file inside '~/k8s-cluster' only. Thanks.
