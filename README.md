@@ -33,3 +33,9 @@ NOTE:
 **#kops update cluster --yes**
 
 7) Now you can try a lot of things. Since your cluster is ready now you need to understand how objects are created in k8s cluster and how to write manifest files for the same.
+
+#################################################################################################################################################################
+#								Changes made on 11 June										#
+#################################################################################################################################################################
+
+- Now, since this code is changed to achieve modular approach, please make chnages in main.tf file inside '~/k8s-cluster' only. Thanks.

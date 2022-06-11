@@ -6,8 +6,7 @@ variable "aws_region" {
 
 variable "vpc_name" {
   type        = string
-  default     = "k8s"
-  description = "Customer/VPC name"
+  description = "Customer or Your name"
 }
 
 variable "namespace" {

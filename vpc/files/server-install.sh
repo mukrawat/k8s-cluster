@@ -1,10 +1,10 @@
 #!/bin/bash -xe
-exec > /var/log/master-userdata.log 2>&1
+exec > /var/log/controller-userdata.log 2>&1
 set +e
 
 
 apt-get update -y
-apt-get install jq vim python3-pip docker.io -y
+apt-get install tree jq vim python3-pip docker.io -y
 apt-get install awscli -y
 
 ###### Install Kops #########
@@ -18,6 +18,11 @@ sudo mv kops /usr/local/bin/kops
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
+
+####### Install helm ##########
+curl -LO https://get.helm.sh/helm-v3.9.0-linux-amd64.tar.gz
+tar -zxvf helm-v3.9.0-linux-amd64.tar.gz
+sudo mv linux-amd64/helm /usr/local/bin/helm
 
 ######## Export env variables ########
 
