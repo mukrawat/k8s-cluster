@@ -1,7 +1,7 @@
 module "s3" {
   source = "./s3"
-  # Vpc_name is basically your name or surname to keep resources unique in aws.
-  vpc_name = "rahul"
+  ###### Vpc_name is basically your name or surname to keep resources unique in aws. You should chnage 'mukesh' to 'your-name'.######
+  vpc_name = "mukesh"
 }
 
 module "vpc" {
