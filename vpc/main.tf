@@ -77,7 +77,8 @@ resource "aws_route53_zone" "private" {
 
 resource "aws_key_pair" "k8s_key" {
   key_name        = "${var.vpc_name}_k8s_key"
-  public_key      = file("~/.ssh/id_rsa.pub")
+  #public_key      = file("~/.ssh/id_rsa.pub")
+  public_key      = file("${path.module}/files/id_rsa.pub")
 }
 
 
@@ -108,7 +109,7 @@ data "template_cloudinit_config" "controller" {
   part {
     content_type = "text/x-shellscript"
     #content     = file("${path.module}/files/server-install.sh")
-    content      = file("~/k8s-cluster/vpc/files/server-install.sh")
+    content      = file("${path.module}/files/server-install.sh")
   }
 }
 
