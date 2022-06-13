@@ -1,6 +1,7 @@
 module "s3" {
   source = "./s3"
-  ###### Vpc_name is basically your name or surname to keep resources unique in aws. You should chnage 'mukesh' to 'your-name'.######
+  # Vpc_name is basically your name or surname to keep resources unique in aws. You should chnage 'mukesh' to 'your-name'.
+  # 'mukesh' will be taken as prefix for your cluster name also, 'mukesh.k8s' in this case.
   vpc_name = "mukesh"
 }
 
