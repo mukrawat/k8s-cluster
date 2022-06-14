@@ -37,11 +37,11 @@ variable "stage" {
 }
 
 variable "vpc_id" {
-  type = "string"
+  type = string
   description = "VPC id"
 }
 
 variable "subnet_id" {
-  type = "string"
+  type = string
   description = "Public Subnet Id"
 }

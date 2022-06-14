@@ -11,7 +11,7 @@ resource "aws_key_pair" "k8s_key" {
 
 
 resource "aws_security_group" "ssh-allowed" {
-    vpc_id = "${var.vpc_id}"
+    vpc_id = var.vpc_id
 
     egress {
         from_port = 0
@@ -94,7 +94,7 @@ resource "aws_iam_instance_profile" "iam-profile" {
 resource "aws_instance" "controller" {
   ami                    = data.aws_ami.linux.id
   instance_type          = var.controller_instance_type
-  key_name               = "${aws_key_pair.k8s_key.id}"
+  key_name               = aws_key_pair.k8s_key.id
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [aws_security_group.ssh-allowed.id]
   iam_instance_profile   = aws_iam_instance_profile.iam-profile.name
