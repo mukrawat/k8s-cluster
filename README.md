@@ -1,4 +1,4 @@
-<p align="center"><b>**###### Create K8s Cluster ######**</b></p>
+<p align="center"><b>****** Create K8s Cluster ******</b></p>
 
 
 1. Clone the repo and #**cd ./k8s-cluster**
@@ -20,4 +20,4 @@ NOTE:
 
 
 
-<p align="center"><b>**###### HAPPY LEARNING ######**</b></p>
+<p align="center"><b>****** HAPPY LEARNING ******</b></p>
