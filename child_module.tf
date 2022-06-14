@@ -1,3 +1,7 @@
+#########################################
+#		Modules			#
+#########################################
+
 module "s3" {
   source = "./s3"
   # Vpc_name is basically your name or surname to keep resources unique in aws. You should chnage 'mukesh' to 'your-name'.
@@ -6,21 +10,37 @@ module "s3" {
 }
 
 module "vpc" {
-  source       = "./vpc"
-  cluster_name = "${module.s3.customer_or_your_name}.k8s"
-  vpc_name     = "${module.s3.customer_or_your_name}"
+  source   = "./vpc"
+  vpc_name = "${module.s3.customer_or_your_name}"
 }
+
+module "controller" {
+  source    = "./controller"
+  vpc_name  = "${module.s3.customer_or_your_name}"
+  vpc_id    = "${module.vpc.vpc_id}"
+  subnet_id = "${module.vpc.subnet_id}"
+}
+
+module "route53" {
+  source       = "./route53"
+  vpc_id       = "${module.vpc.vpc_id}"
+  cluster_name = "${module.s3.customer_or_your_name}.k8s"
+}
+
+#########################################
+#		Outputs			#
+#########################################
 
 output "s3_bucket_name" {
   value = "${module.s3.s3_bucket_id}"
 }
 
 output "controller_instance_id" {
-  value = "${module.vpc.controller_instance_id}"
+  value = "${module.controller.controller_instance_id}"
 }
 
 output "controller_public_ip" {
-  value = "${module.vpc.controller_public_ip}"
+  value = "${module.controller.controller_public_ip}"
 }
 
 output "vpc_id" {
@@ -28,5 +48,5 @@ output "vpc_id" {
 }
 
 output "cluster_name" {
-  value = "${module.vpc.cluster_name}"
+  value = "${module.route53.cluster_name}"
 }
