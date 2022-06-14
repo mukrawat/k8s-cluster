@@ -10,7 +10,7 @@
 
 #**kops create cluster --name=<cluster_name> --state=s3://<bucket_name> --node-count=<node_count> --node-size=<node_size> --master-count=<master_count> --master-size=<master_size> --vpc=<vpc_id> --zones=us-east-1b,us-east-1c --dns=private --yes**
 
-#**kops update cluster --name=<cluster_name> ;--state=s3://<bucket_name> --yes**
+#**kops update cluster --name=<cluster_name> --state=s3://<bucket_name> --yes**
 
 NOTE:
 - cluster_name, vpc_id, controller_public_ip and bucket_name you get as output when you run terraform command, make a note of that.
