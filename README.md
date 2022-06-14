@@ -11,6 +11,7 @@
 8. Now ssh into controller 
 
 #**ssh -i ./k8s-cluster/controller/files/id_rsa.pub ubuntu@<public_ip>**
+
 11. Once logged into controller, run below command to create a cluster,
 
 #**kops create cluster --name=<cluster_name> --state=s3://<bucket_name> --node-count=<node_count> --node-size=<node_size> --master-count=<master_count> --master-size=<master_size> --vpc=<vpc_id> --zones=us-east-1b,us-east-1c --dns=private --yes**
