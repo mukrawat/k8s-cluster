@@ -17,4 +17,4 @@ NOTE:
 - node_size and master_size can be any intance size, like "t3.medium or t2.small"
 - node_count can be 2 or 3 and master_count should be 1. These counts should be as minimal as they can be **(1 < count <= 3)**  since this is just a setup for learning purpose only.
 
-<p align="center">**###### HAPPY LEARNING ######**</p>
+<p align="center"><b>**###### HAPPY LEARNING ######**</b></p>
