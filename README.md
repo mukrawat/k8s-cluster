@@ -1,4 +1,4 @@
-# Create k8s-cluster
+<p align="center"><b>**###### Create K8s Cluster ######**</b></p>
 
 1. Clone the repo and #**cd ./k8s-cluster**
 2. Copy your public key into **./k8s-cluster/controller/files/id_rsa.pub**
@@ -16,5 +16,7 @@ NOTE:
 - cluster_name, vpc_id, controller_public_ip and bucket_name you get as output when you run terraform command, make a note of that.
 - node_size and master_size can be any intance size, like "t3.medium or t2.small"
 - node_count can be 2 or 3 and master_count should be 1. These counts should be as minimal as they can be **(1 < count <= 3)**  since this is just a setup for learning purpose only.
+
+
 
 <p align="center"><b>**###### HAPPY LEARNING ######**</b></p>
