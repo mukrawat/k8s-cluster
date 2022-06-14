@@ -7,6 +7,7 @@
 4. Now run,
 
 #**terraform init && terraform apply -auto-approve**
+
 7. You will see vpc_id, bucket_name, cluster_name, instance_public_ip in output, make a note of that.
 8. Now ssh into controller 
 
