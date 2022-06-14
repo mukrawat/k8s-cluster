@@ -21,6 +21,7 @@ NOTE:
 8. Now, once you are done with the cluster, make sure to delete the cluster using below command,
 
 #**kops delete cluster --name=<cluster_name> --state=s3://<bucket_name> --yes**
+
 9. Now, you can run #**terraform destroy -auto-approve** to clean all resources.
 
 
