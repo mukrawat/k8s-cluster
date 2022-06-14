@@ -1,5 +1,6 @@
 <p align="center"><b>**###### Create K8s Cluster ######**</b></p>
 
+
 1. Clone the repo and #**cd ./k8s-cluster**
 2. Copy your public key into **./k8s-cluster/controller/files/id_rsa.pub**
 3. If you want to give the cluster a different name, for example **'globallogic.k8s or my-cluster.k8s'**, you have to change **'vpc_name'** to **'globallgic or my-cluster'** in **./k8s-cluster/child_module.tf** file.
