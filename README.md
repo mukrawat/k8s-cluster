@@ -18,6 +18,9 @@ NOTE:
 - node_size and master_size can be any intance size, like "t3.medium or t2.small"
 - node_count can be 2 or 3 and master_count should be 1. These counts should be as minimal as they can be **(1 < count <= 3)**  since this is just a setup for learning purpose only.
 
+8. Now, once you are done with the cluster, make sure to delete the cluster using below command,
+#**kops delete cluster --name=<cluster_name> --state=s3://<bucket_name> --yes**
+9. Now, you can run #**terraform destroy -auto-approve** to clean all resources.
 
 
 <p align="center"><b>****** Happy Learning ******</b></p>
